@@ -1,4 +1,5 @@
 ﻿using System.Windows.Input;
+using YouTubeViewers.WPF.Stores;
 
 namespace YouTubeViewers.WPF.ViewModels
 {
@@ -9,10 +10,10 @@ namespace YouTubeViewers.WPF.ViewModels
 
         public ICommand AddYouTubeViewerCommand { get; set; }
 
-        public YouTubeViewersViewModel()
+        public YouTubeViewersViewModel(SelectedYouTubeViewerStore selectedYouTubeViewerStore)
         {
-            YouTubeViewersListingViewModel = new();
-            YouTubeViewersDetailsViewModel = new();
+            YouTubeViewersListingViewModel = new(selectedYouTubeViewerStore);
+            YouTubeViewersDetailsViewModel = new(selectedYouTubeViewerStore);
         }
     }
 }

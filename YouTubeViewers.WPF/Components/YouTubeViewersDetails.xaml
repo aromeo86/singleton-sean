@@ -12,47 +12,74 @@
                 CornerRadius="5"
                 Padding="20"
                 SnapsToDevicePixels="True">
-            <Grid Grid.IsSharedSizeScope="True">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
-
-                <TextBlock FontSize="24"
-                           Grid.Row="0"
-                           Text="SingletonSean"/>
-
-                <Grid Grid.Row="1"
-                      Margin="0,20,0,0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto" SharedSizeGroup="label"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-
-                    <TextBlock FontWeight="Bold" 
-                               Grid.Column="0"
-                               Text="Is Subscribed? "/>
-                    
-                    <TextBlock Grid.Column="1"
-                               Margin="20,0,0,0"
-                               Text="Yes"/>
+            <Grid>
+                <Grid>
+                    <Grid.Style>
+                        <Style TargetType="{x:Type Grid}">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding HasSelectedYouTubeViewer}" Value="False">
+                                    <Setter Property="Visibility" Value="Visible"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Grid.Style>
+                    <TextBlock FontSize="24"
+                               Text="Please selecte a YouTube viewer to see theri details"/>
                 </Grid>
+                
+                <Grid Grid.IsSharedSizeScope="True">
+                    <Grid.Style>
+                        <Style TargetType="{x:Type Grid}">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding HasSelectedYouTubeViewer}" Value="True">
+                                    <Setter Property="Visibility" Value="Visible"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Grid.Style>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
 
-                <Grid Grid.Row="2"
-                      Margin="0,20,0,0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto" SharedSizeGroup="label"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
+                    <TextBlock FontSize="24"
+                               Grid.Row="0"
+                               Text="{Binding Username}"/>
 
-                    <TextBlock FontWeight="Bold" 
-                               Grid.Column="0"
-                               Text="Is Member?"/>
+                    <Grid Grid.Row="1"
+                          Margin="0,20,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" SharedSizeGroup="label"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
 
-                    <TextBlock Grid.Column="1"
-                               Margin="20,0,0,0"
-                               Text="Yes"/>
+                        <TextBlock FontWeight="Bold" 
+                                   Grid.Column="0"
+                                   Text="Is Subscribed? "/>
+
+                        <TextBlock Grid.Column="1"
+                                   Margin="20,0,0,0"
+                                   Text="{Binding IsSubscribedDisplay}"/>
+                    </Grid>
+
+                    <Grid Grid.Row="2"
+                          Margin="0,20,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" SharedSizeGroup="label"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock FontWeight="Bold" 
+                                   Grid.Column="0"
+                                   Text="Is Member?"/>
+
+                        <TextBlock Grid.Column="1"
+                                   Margin="20,0,0,0"
+                                   Text="{Binding IsMemberDisplay}"/>
+                    </Grid>
                 </Grid>
             </Grid>
         </Border>
