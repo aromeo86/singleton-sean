@@ -1,0 +1,84 @@
+﻿<UserControl x:Class="YouTubeViewers.WPF.Components.YouTubeViewerDetailsForm"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:YouTubeViewers.WPF.Components"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <Grid Grid.IsSharedSizeScope="True"
+              Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" SharedSizeGroup="label"/>
+                    <ColumnDefinition Width="*" MaxWidth="250"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock FontWeight="Bold" 
+                           Grid.Column="0"
+                           Text="Username"/>
+
+                <TextBox Grid.Column="1"
+                         Margin="20,0,0,0"
+                         Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}"/>
+            </Grid>
+
+            <Grid Grid.Row="1"
+                  Margin="0,20,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" SharedSizeGroup="label"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock FontWeight="Bold" 
+                           Grid.Column="0"
+                           Text="Is Subscribed? "/>
+
+                <CheckBox Grid.Column="1"
+                          IsChecked="{Binding IsSubscribed}"
+                          Margin="20,0,0,0"
+                          VerticalAlignment="Center"/>
+            </Grid>
+
+            <Grid Grid.Row="2"
+                  Margin="0,20,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" SharedSizeGroup="label"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock FontWeight="Bold" 
+                           Grid.Column="0"
+                           Text="Is Member?"/>
+
+                <CheckBox Grid.Column="1"
+                          IsChecked="{Binding IsMember}"
+                          Margin="20,0,0,0"
+                          VerticalAlignment="Center"/>
+            </Grid>
+        </Grid>
+
+        <WrapPanel Grid.Row="1"
+                   Margin="0,20,0,0">
+            <Button Command="{Binding SubmitCommand}"
+                    Content="Submit"
+                    IsEnabled="{Binding CanSubmit}"
+                    Margin="0,0,5,0"/>
+            <Button Command="{Binding CancelCommand}"
+                    Content="Cancel"
+                    Style="{StaticResource ButtonSecondary}"/>
+        </WrapPanel>
+    </Grid>
+</UserControl>

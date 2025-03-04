@@ -19,8 +19,8 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
 
-            <TextBlock FontSize="32"
-                       Grid.Column="0"
+            <TextBlock Grid.Column="0"
+                       Style="{StaticResource PageHeader}"
                        Text="YouTube Viewers"/>
             <Button Command="{Binding AddYouTubeViewerCommand}"
                     Content="Add"
@@ -37,9 +37,9 @@
 
             <components:YouTubeViewersListing DataContext="{Binding YouTubeViewersListingViewModel}"
                                               Grid.Column="0"/>
-            <components:YouTubeViewersDetails DataContext="{Binding YouTubeViewersDetailsViewModel}"
-                                              Grid.Column="1"
-                                              Margin="20,0,0,0"/>
+            <components:YouTubeViewerDetails DataContext="{Binding YouTubeViewersDetailsViewModel}"
+                                             Grid.Column="1"
+                                             Margin="20,0,0,0"/>
         </Grid>
     </Grid>
 </UserControl>

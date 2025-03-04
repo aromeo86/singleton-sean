@@ -2,9 +2,9 @@
 
 namespace YouTubeViewers.WPF.Components
 {
-    public partial class YouTubeViewersDetails : UserControl
+    public partial class YouTubeViewerDetails : UserControl
     {
-        public YouTubeViewersDetails()
+        public YouTubeViewerDetails()
         {
             InitializeComponent();
         }
