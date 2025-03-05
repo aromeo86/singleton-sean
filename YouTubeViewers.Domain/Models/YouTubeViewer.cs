@@ -1,4 +1,4 @@
-﻿namespace YouTubeViewers.WPF.Models
+﻿namespace YouTubeViewers.Domain.Models
 {
     public class YouTubeViewer
     {

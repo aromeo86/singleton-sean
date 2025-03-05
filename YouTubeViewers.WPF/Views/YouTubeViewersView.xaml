@@ -37,6 +37,7 @@
 
             <components:YouTubeViewersListing DataContext="{Binding YouTubeViewersListingViewModel}"
                                               Grid.Column="0"/>
+            
             <components:YouTubeViewerDetails DataContext="{Binding YouTubeViewersDetailsViewModel}"
                                              Grid.Column="1"
                                              Margin="20,0,0,0"/>

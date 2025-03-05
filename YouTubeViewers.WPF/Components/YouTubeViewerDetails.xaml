@@ -24,7 +24,7 @@
                             </Style.Triggers>
                         </Style>
                     </Grid.Style>
-                    <TextBlock FontSize="24"
+                    <TextBlock FontSize="18"
                                Text="Please selecte a YouTube viewer to see theri details"/>
                 </Grid>
                 
