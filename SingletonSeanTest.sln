@@ -21,6 +21,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YouTubeViewers.EntityFramew
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YouTubeViewers.Domain", "YouTubeViewers.Domain\YouTubeViewers.Domain.csproj", "{A5961803-CAD8-4CB2-BBBE-72903622F303}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TempoPercentStudio", "TempoPercentStudio", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TempoPercentStudio.MAUI", "TempoPercentStudio.MAUI\TempoPercentStudio.MAUI.csproj", "{60DBB221-AE71-E34A-DA69-7511DADD4510}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +59,10 @@ Global
 		{A5961803-CAD8-4CB2-BBBE-72903622F303}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A5961803-CAD8-4CB2-BBBE-72903622F303}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A5961803-CAD8-4CB2-BBBE-72903622F303}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60DBB221-AE71-E34A-DA69-7511DADD4510}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60DBB221-AE71-E34A-DA69-7511DADD4510}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60DBB221-AE71-E34A-DA69-7511DADD4510}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60DBB221-AE71-E34A-DA69-7511DADD4510}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -67,5 +75,9 @@ Global
 		{7C9882BB-2301-4CFD-9C0E-4255F9B7980B} = {9F558B28-530F-48C1-A157-6A74E4C39616}
 		{EF4F4C74-843E-44ED-BBD9-0DD55C93C579} = {9F558B28-530F-48C1-A157-6A74E4C39616}
 		{A5961803-CAD8-4CB2-BBBE-72903622F303} = {9F558B28-530F-48C1-A157-6A74E4C39616}
+		{60DBB221-AE71-E34A-DA69-7511DADD4510} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AFADC6B4-5A6A-4340-812F-8E17A5B408E8}
 	EndGlobalSection
 EndGlobal

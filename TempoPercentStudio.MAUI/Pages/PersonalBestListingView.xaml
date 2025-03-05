@@ -1,0 +1,46 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:components="clr-namespace:TempoPercentStudio.Shared.Components"
+             x:Class="TempoPercentStudio.MAUI.Pages.PersonalBestListingView">
+    <VerticalStackLayout>
+        <Button Command="{Binding NavigateAddPersonalBestCommand}"
+                HorizontalOptions="Start"
+                Margin="10"
+                Text="Add"/>
+
+        <components:If Condition="{Binding IsLoading}" 
+                       Margin="0,20,0,0">
+            <components:If.True>
+                <ActivityIndicator IsRunning="True"/>
+            </components:If.True>
+
+            <components:If.False>
+                <components:If Condition="{Binding HasError}">
+                    <components:If.True>
+                        <Label Text="{Binding ErrorMessage}"/>
+                    </components:If.True>
+                    <components:If.False>
+                        <CollectionView ItemsSource="{Binding PersonalBests}">
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <HorizontalStackLayout>
+                                        <Label Margin="10"
+                                               Text="{Binding Distance}"
+                                               VerticalTextAlignment="Center"/>
+                                        <Label Margin="10"
+                                               Text="{Binding Time}"
+                                               VerticalTextAlignment="Center"/>
+                                        <Button Margin="10"
+                                                Command="{Binding DeletePersonalBestCommand}"
+                                                HorizontalOptions="End"
+                                                Text="Delete"/>
+                                    </HorizontalStackLayout>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </components:If.False>
+                </components:If>
+            </components:If.False>
+        </components:If>
+    </VerticalStackLayout>
+</ContentPage>
