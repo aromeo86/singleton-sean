@@ -1,5 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
+using TempoPercentStudio.Entities.PersonalBests;
 using TempoPercentStudio.MAUI.Pages;
+using TempoPercentStudio.Shared.Database;
 
 namespace TempoPercentStudio.MAUI;
 
@@ -20,10 +22,18 @@ public static class MauiProgram
 		builder.Logging.AddDebug();
 #endif
 
+		builder.Services.AddSingleton<SqliteConnectionFactory>();
+
+		builder.Services.AddSingleton<PersonalBestRepository>();
+
 		builder.Services.AddSingleton<PersonalBestListingView>();
         builder.Services.AddSingleton<PersonalBestListingViewModel>();
+
         builder.Services.AddSingleton<AddPersonalBestView>();
         builder.Services.AddSingleton<AddPersonalBestViewModel>();
+
+        builder.Services.AddSingleton<CalculateTempoView>();
+        builder.Services.AddSingleton<CalculateTempoViewModel>();
 
         return builder.Build();
 	}

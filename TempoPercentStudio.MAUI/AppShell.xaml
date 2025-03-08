@@ -7,9 +7,15 @@
     Shell.FlyoutBehavior="Disabled"
     Title="Tempo Percent Studio">
 
-    <ShellContent
-        Title="Personal Bests"
-        ContentTemplate="{DataTemplate pages:PersonalBestListingView}"
-        Route="PersonalBestListing" />
+    <Tab Title="Calculate">
+        <ShellContent Title="Calculate Tempo"
+                      ContentTemplate="{DataTemplate pages:CalculateTempoView}"
+                      Route="CalculateTempo" />
+    </Tab>
 
+    <Tab Title="Personal Bests">
+        <ShellContent Title="Personal Bests"
+                      ContentTemplate="{DataTemplate pages:PersonalBestListingView}"
+                      Route="PersonalBestListing" />
+    </Tab>
 </Shell>
